@@ -5,7 +5,7 @@ import co.tide.diyfood.thirdparty.api.store.OrderQuote;
 
 public interface StoreService {
 
-    boolean acceptOrder(String orderQuoteId);
+    String acceptOrder(String orderQuoteId);
 
     OrderQuote createOrderQuote(Recipe recipe);
 }

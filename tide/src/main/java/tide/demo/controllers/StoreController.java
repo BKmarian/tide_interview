@@ -27,7 +27,7 @@ public class StoreController {
     }
 
     @PostMapping("/acceptOrder/{id}")
-    public ResponseEntity<Boolean> acceptOrder(@PathVariable(name = "id") String orderQuoteId) {
+    public ResponseEntity<String> acceptOrder(@PathVariable(name = "id") String orderQuoteId) {
         return new ResponseEntity<>(storeServiceImpl.acceptOrder(orderQuoteId), HttpStatus.OK);
     }
 }

@@ -36,15 +36,15 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public boolean acceptOrder(String orderQuoteId) {
-        logger.info("Acception order with id {}",orderQuoteId);
+    public String acceptOrder(String orderQuoteId) {
+        logger.info("Accepting order with id {}",orderQuoteId);
         try {
             storeApi.acceptOrderQuote(orderQuoteId);
-            return true;
+            return "Accepted";
         }
         catch(Exception e) {
             logger.error(e.getMessage());
-            return false;
+            return e.getMessage();
         }
         //TODO async request to update order status with accepted status to our DB
     }
